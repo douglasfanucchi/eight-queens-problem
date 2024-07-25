@@ -12,6 +12,7 @@ class ChessBoard {
         ChessBoard(int);
         bool isAvailable(int, int);
         void putQueen(int, int);
+        void removeQueen(int, int);
         std::string checkQueen(int) const;
 };
 

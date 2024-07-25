@@ -40,9 +40,20 @@ void test_should_get_queen_position_by_a_given_row()
     ASSERT_STREQ(expected, result);
 }
 
+void test_should_remove_queen_from_position()
+{
+    ChessBoard board(2);
+    board.putQueen(0, 0);
+
+    board.removeQueen(0, 0);
+
+    ASSERT_TRUE(board.isAvailable(0, 0));
+}
+
 void RUN_CHESS_BOARD_TEST_SUITE()
 {
     test_should_create_a_2x2_chess_board();
     test_should_put_queen_into_first_position();
     test_should_get_queen_position_by_a_given_row();
+    test_should_remove_queen_from_position();
 }
