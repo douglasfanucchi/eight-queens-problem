@@ -3,6 +3,7 @@
 ChessBoard::ChessBoard(int dimension) : dimension(dimension) {
     this->columns.resize(dimension);
     this->rows.resize(dimension);
+    this->rowPosition.resize(dimension);
     this->leftDiagonals.resize(2 * dimension - 1);
     this->rightDiagonals.resize(2 * dimension - 1);
 
@@ -26,4 +27,9 @@ void ChessBoard::putQueen(int row, int col) {
     this->leftDiagonals[row + col] = 0;
     this->rightDiagonals[row - col + bias] = 0;
     this->rows[row] = 0;
+    this->rowPosition[row] = col;
+}
+
+std::string ChessBoard::checkQueen(int row) const {
+    return "Queen at (" + std::to_string(row) + ", " + std::to_string(this->rowPosition[row]) + ")";
 }

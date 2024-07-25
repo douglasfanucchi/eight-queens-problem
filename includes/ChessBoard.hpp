@@ -7,7 +7,7 @@
 class ChessBoard {
     protected:
         int dimension;
-        std::vector<char> leftDiagonals, rightDiagonals, columns, rows;
+        std::vector<char> leftDiagonals, rightDiagonals, columns, rows, rowPosition;
     public:
         ChessBoard(int);
         bool isAvailable(int, int);
