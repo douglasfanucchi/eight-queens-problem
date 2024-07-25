@@ -5,6 +5,7 @@ class ChessBoard {
     public:
         ChessBoard(int);
         bool isAvailable(int, int);
+        void putQueen(int, int);
 };
 
 #endif
