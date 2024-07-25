@@ -1,7 +1,12 @@
 #ifndef CHESS_BOARD_H
 # define CHESS_BOARD_H
 
+#include <vector>
+
 class ChessBoard {
+    protected:
+        int dimension;
+        std::vector<char> leftDiagonals, rightDiagonals, columns;
     public:
         ChessBoard(int);
         bool isAvailable(int, int);

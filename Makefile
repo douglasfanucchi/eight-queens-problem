@@ -1,6 +1,6 @@
 NAME=executable
 
-FILES:=
+FILES:=ChessBoard.cpp
 FILES:=$(addprefix src/, $(FILES))
 OBJS:=$(FILES:%.cpp=%.o)
 TEST_FILES:= asserts.cpp unit/ChessBoard.cpp
