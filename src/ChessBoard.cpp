@@ -19,3 +19,11 @@ bool ChessBoard::isAvailable(int row, int col) {
         && this->rightDiagonals[row - col + bias]
         && this->rows[row];
 }
+
+void ChessBoard::putQueen(int row, int col) {
+    int bias = this->dimension - 1;
+    this->columns[col] = 0;
+    this->leftDiagonals[row + col] = 0;
+    this->rightDiagonals[row - col + bias] = 0;
+    this->rows[row] = 0;
+}
