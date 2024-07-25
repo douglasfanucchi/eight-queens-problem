@@ -41,3 +41,19 @@ void ChessBoard::removeQueen(int row, int col) {
 std::string ChessBoard::checkQueen(int row) const {
     return "Queen at (" + std::to_string(row) + ", " + std::to_string(this->rowPosition[row]) + ")";
 }
+
+std::vector<ChessBoard> ChessBoard::solveQueensPuzzle(int row) {
+    for (int col = 0; col < this->dimension; col++) {
+        if (!this->isAvailable(row, col)) {
+            continue;
+        }
+        this->putQueen(row, col);
+        if (row < this->dimension - 1) {
+            this->solveQueensPuzzle(row + 1);
+        } else {
+            this->solutions.push_back(*this);
+        }
+        this->removeQueen(row, col);
+    }
+    return this->solutions;
+}
