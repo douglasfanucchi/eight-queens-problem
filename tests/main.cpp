@@ -3,6 +3,6 @@
 
 int main()
 {
-    RUN_EXAMPLE_SUITE();
+    RUN_CHESS_BOARD_TEST_SUITE();
     std::cout << std::endl;
 }
