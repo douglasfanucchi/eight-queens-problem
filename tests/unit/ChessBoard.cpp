@@ -25,7 +25,7 @@ void test_should_put_queen_into_first_position()
     ASSERT_FALSE(board.isAvailable(2, 0));
     ASSERT_FALSE(board.isAvailable(2, 2));
     ASSERT_TRUE(board.isAvailable(1, 2));
-    ASSERT_TRUE(board.isAvailable(2, 2));
+    ASSERT_TRUE(board.isAvailable(2, 1));
 }
 
 void RUN_CHESS_BOARD_TEST_SUITE()
