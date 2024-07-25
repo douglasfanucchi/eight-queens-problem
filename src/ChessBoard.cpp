@@ -30,6 +30,14 @@ void ChessBoard::putQueen(int row, int col) {
     this->rowPosition[row] = col;
 }
 
+void ChessBoard::removeQueen(int row, int col) {
+    int bias = this->dimension - 1;
+    this->columns[col] = true;
+    this->leftDiagonals[row + col] = true;
+    this->rightDiagonals[row - col + bias] = true;
+    this->rows[row] = true;
+}
+
 std::string ChessBoard::checkQueen(int row) const {
     return "Queen at (" + std::to_string(row) + ", " + std::to_string(this->rowPosition[row]) + ")";
 }
