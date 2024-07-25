@@ -2,6 +2,7 @@
 # define CHESS_BOARD_H
 
 #include <vector>
+#include <string>
 
 class ChessBoard {
     protected:
@@ -11,6 +12,7 @@ class ChessBoard {
         ChessBoard(int);
         bool isAvailable(int, int);
         void putQueen(int, int);
+        std::string checkQueen(int) const;
 };
 
 #endif

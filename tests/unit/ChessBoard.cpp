@@ -28,8 +28,21 @@ void test_should_put_queen_into_first_position()
     ASSERT_TRUE(board.isAvailable(2, 1));
 }
 
+void test_should_get_queen_position_by_a_given_row()
+{
+    ChessBoard board(2);
+    int row = 1;
+    board.putQueen(row, 1);
+    std::string expected = "Queen at (1, 1)";
+
+    std::string result = board.checkQueen(row);
+
+    ASSERT_STREQ(expected, result);
+}
+
 void RUN_CHESS_BOARD_TEST_SUITE()
 {
     test_should_create_a_2x2_chess_board();
     test_should_put_queen_into_first_position();
+    test_should_get_queen_position_by_a_given_row();
 }
