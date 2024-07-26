@@ -10,6 +10,7 @@ class ChessBoard {
         std::vector<char> leftDiagonals, rightDiagonals, columns, rows, rowPosition;
         std::vector<ChessBoard> solutions;
     public:
+        ChessBoard(const ChessBoard &obj);
         ChessBoard(int);
         bool isAvailable(int, int);
         void putQueen(int, int);
